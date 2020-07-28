@@ -28,14 +28,14 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	if (tmp->next == NULL)
 	{ /* validate if there is only one element in the list*/
-		if (number <= tmp->n)
-		{
-			newNode->next = tmp;
-			*head = newNode;
-			return (newNode);
-		}
 		newNode->next = NULL;
 		tmp->next = newNode;
+		return (newNode);
+	}
+	if (number <= tmp->n)
+	{
+		newNode->next = tmp;
+		*head = newNode;
 		return (newNode);
 	}
 	while (tmp->next != NULL)
