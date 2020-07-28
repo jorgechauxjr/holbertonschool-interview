@@ -28,7 +28,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	if (tmp->next == NULL)
 	{ /* validate if there is only one element in the list*/
-		if (number < tmp->n)
+		if (number <= tmp->n)
 		{
 			newNode->next = tmp;
 			*head = newNode;
@@ -38,7 +38,7 @@ listint_t *insert_node(listint_t **head, int number)
 		tmp->next = newNode;
 		return (newNode);
 	}
-	while (tmp != NULL)
+	while (tmp->next != NULL)
 	{/*go through the list*/
 		if (number <= tmp->next->n)
 		{
