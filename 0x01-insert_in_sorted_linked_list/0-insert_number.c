@@ -48,5 +48,7 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		tmp = tmp->next;
 	}
+	tmp->next = newNode;
+	newNode->next = NULL;
 	return (newNode);
 }
