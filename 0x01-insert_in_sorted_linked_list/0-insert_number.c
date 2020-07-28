@@ -19,17 +19,15 @@ listint_t *insert_node(listint_t **head, int number)
 		free(newNode);
 		return (NULL);
 	}
-	/*Validate if there is no list the node will be the only element*/
 	newNode->n = number;
-	if (*head == NULL)
+	if (*head == NULL) /*Validate if there is not elements in the list*/
 	{
 		*head = newNode;
 		newNode->next = NULL;
 		return (newNode);
 	}
-	/* validate if there is only one element in the list*/
 	if (tmp->next == NULL)
-	{
+	{ /* validate if there is only one element in the list*/
 		if (number < tmp->n)
 		{
 			newNode->next = tmp;
@@ -40,12 +38,12 @@ listint_t *insert_node(listint_t **head, int number)
 		tmp->next = newNode;
 		return (newNode);
 	}
-	while(tmp != NULL)
-	{
-		if (number <= tmp->n)
+	while (tmp != NULL)
+	{/*go through the list*/
+		if (number <= tmp->next->n)
 		{
-			newNode->next = tmp;
-			*head = newNode;
+			newNode->next = tmp->next;
+			tmp->next = newNode;
 			return (newNode);
 		}
 		tmp = tmp->next;
