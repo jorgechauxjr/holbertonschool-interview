@@ -9,16 +9,11 @@
  **/
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *newNode;
-	listint_t *tmp = *head;
+	listint_t *newNode, *tmp = *head;
 
 	newNode = malloc(sizeof(listint_t)); /*Assign mwmory space for newNode*/
-
-	if (newNode == NULL)
-	{ /*validate that malloc is good, if not return null and free memory*/
-		free(newNode);
+	if (newNode == NULL)  /*validate malloc is good, if not return null*/
 		return (NULL);
-	}
 	newNode->n = number;
 	if (*head == NULL) /*Validate if there is not elements in the list*/
 	{
