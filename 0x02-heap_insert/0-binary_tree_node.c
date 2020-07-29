@@ -18,18 +18,23 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 		return (NULL);
 	
 	newNode->n = value;
+	newNode->left = NULL;
+	newNode->right = NULL;
+
 	if (parent == NULL) /*validate if empty tree*/
 	{
 		parent = newNode;
+		newNode->parent = NULL;
 		return (newNode);
 	}
-	
+	/*If parent left is null add new to left*/
 	if (parent->left == NULL)
 	{
 		newNode->parent = parent;
 		parent->left = newNode;
 		return (newNode);
 	}
+	/*If parent left is not null, add new to right*/
 	newNode->parent = parent;
 	parent->right = newNode;
 	return (newNode);
