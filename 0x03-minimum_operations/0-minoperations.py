@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-"""
-    Get the minumun operation iterative
-    it no take a lot time
-"""
 
 
 def minOperations(n):
-    """Get the minum operation iterative"""
+    """
+    In a text file, there is a single character H.
+    Your text editor can execute only two operations in this file:
+    Copy All and Paste. Given a number n, write a method that calculates
+    the fewest number of operations needed to result in exactly n H characters
+    in the file
+    """
+
     if n <= 1:
         return 0
-    number = n
-    div = 2
-    min_oper = 0
-    while number > 1:
-        if number % div == 0:
-            number /= div
-            min_oper += div
+    num, div, numOfOperations = n, 2, 0
+
+    while num > 1:
+        if num % div == 0:
+            num = num / div
+            numOfOperations = numOfOperations + div
         else:
             div += 1
-    return min_oper
+    return numOfOperations
