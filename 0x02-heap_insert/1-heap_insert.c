@@ -1,8 +1,5 @@
 #include <stdlib.h>
 #include "binary_trees.h"
-
-#include <stdlib.h>
-#include "binary_trees.h"
 /**
 * binary_tree_size -measures the size of a binary tree
 * @tree:  pointer to the root node of the tree to measure the size.
@@ -21,13 +18,11 @@ size_t binary_tree_size(const binary_tree_t *tree)
 	bt_size = bt_size + 1;
 	return (bt_size);
 }
-
 /**
  * binary_tree_is_perfect - function that checks if a tree is perfect
  * @tree: pointer to the root
  * Return: 1 if true or 0 if false
  */
-
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int left_size, right_size;
@@ -40,7 +35,6 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 		return (1);
 	return (0);
 }
-
 /**
  * heap_check_father - checks the father value is greater than the child
  * @son: pointer to the child node to swap
@@ -82,21 +76,18 @@ void heap_check_father(heap_t **son, heap_t **father)
 		{
 			*father = child;
 		}
-
 		child->parent = parent->parent;
 		parent->parent = child;
 		parent->left = c_left;
 		parent->right = c_right;
 	}
 }
-
 /**
  * heap_insert - create a new tree
  * @root: double pointer to the root node of the Heap
  * @value: value store in the node to be inserted
  * Return: a pointer to the inserted node, or NULL on failure
  */
-
 heap_t *heap_insert(heap_t **root, int value)
 {
 	heap_t *newNode;
@@ -106,7 +97,6 @@ heap_t *heap_insert(heap_t **root, int value)
 		*root = binary_tree_node(NULL, value);
 		return (*root);
 	}
-
 	if (binary_tree_is_perfect(*root) || (!binary_tree_is_perfect((*root)->left)))
 	{
 		if ((*root)->left != NULL)
