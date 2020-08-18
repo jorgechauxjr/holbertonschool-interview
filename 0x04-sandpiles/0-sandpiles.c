@@ -7,7 +7,8 @@
  * @grid2: second matrix
  */
 
-void grid_addition(int grid1[3][3], int grid2[3][3]) {
+void grid_addition(int grid1[3][3], int grid2[3][3])
+{
 	int i, j;
 
 	for (i = 0; i < 3; i++)
@@ -25,6 +26,7 @@ void grid_addition(int grid1[3][3], int grid2[3][3]) {
  * @grid2: second matrix
  */
 
-void sandpiles_sum(int grid1[3][3], int grid2[3][3]) {
-	grid_addition(grid1, grid2); 
+void sandpiles_sum(int grid1[3][3], int grid2[3][3])
+{
+	grid_addition(grid1, grid2);
 }
