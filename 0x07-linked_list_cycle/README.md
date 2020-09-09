@@ -13,4 +13,6 @@
 - The prototypes of all your functions should be included in your header file called lists.h
 - Don’t forget to push your header file
 - All your header files should be include guarded
+### TASK
+Write a function in C that checks if a singly linked list has a cycle in it.
 #### Twitter: [Jorge Chaux Jr](https://twitter.com/jorgechauxjr)
