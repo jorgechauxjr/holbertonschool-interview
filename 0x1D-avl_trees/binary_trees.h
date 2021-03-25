@@ -1,13 +1,8 @@
-#ifndef _BINARY_TREE_H_
-#define _BINARY_TREE_H_
-/* =========== Libraries =========== */
-#include <stdio.h>
-#include <stdlib.h>
-#include <stddef.h>
-#include <math.h>
-#include <limits.h>
+#ifndef gogomillan
+#define gogomillan
 
-/* =========== Structures =========== */
+#include <stddef.h>
+#include <limits.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -28,8 +23,8 @@ struct binary_tree_s
 typedef struct binary_tree_s binary_tree_t;
 typedef struct binary_tree_s avl_t;
 
-/* =========== Prototypes =========== */
-void binary_tree_print(const binary_tree_t *);
 int binary_tree_is_avl(const binary_tree_t *tree);
+void binary_tree_print(const binary_tree_t *tree);
+binary_tree_t *binary_tree_node(binary_tree_t *root, int n);
 
-#endif /* _BINARY_TREE_H_ */
+#endif  /* gogomillan */
